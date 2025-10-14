@@ -41,7 +41,7 @@ int main()
 
     media = (n1 + n2 + n3) / 3;
 
-    printf("O maior é %.2f, o menor é %.2f e a média é %.2f", max, min, media);
+    printf("O maior é %.2f, o menor é %.2f e a média é %.2f\n", max, min, media);
 
     return 0;
 }
