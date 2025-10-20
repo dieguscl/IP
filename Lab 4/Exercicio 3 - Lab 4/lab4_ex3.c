@@ -33,11 +33,21 @@ scanf("%f", &altura);
 printf("Insira o seu peso(kg): ");
 scanf("%f", &peso);
 imc = peso / (altura*altura);
-printf("%.1f", imc);
 if(imc<18.5){
   classificacao="Baixo Peso";
 } else if (imc >=18.5 && imc <25.0){
   classificacao="Peso Normal";
+} else if (imc >=25.0 && imc <30.0){
+  classificacao="Excesso de Peso";
+} else if (imc >=30.0 && imc <35.0){
+  classificacao="Obesidade I";
+} else if (imc >=35.0 && imc <40.0){
+  classificacao="Obesidade II";
+} else if (imc >=40.0){
+  classificacao="Obesidade III";
 }
-printf("%s", classificacao);
+printf("Altura: %.2f\n", altura);
+printf("Peso: %.2f\n", peso);
+printf("IMC: %.1f\n", imc);
+printf("Classificação: %s", classificacao);
 }
