@@ -4,6 +4,15 @@
 #include <string.h>
 #include <math.h>
 
+/*
+ Laboratório 5 Subprogramas
+ Grupo: 3
+ Elementos:
+ - Gonçalo Ferreira (nº202300815)
+ - Diego Laya (nº2025184378)
+ - Tiago Martins (nº202001207)
+*/
+
 int apresentarMenu(void);
 int fatorialInt(int n);   // cálculo com int (fase A)
 double fatorial(int n);   // cálculo com double (fase B)
