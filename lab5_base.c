@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
+#include <math.h>
 
 int apresentarMenu(void);
 int fatorialInt(int n);   // cálculo com int (fase A)
@@ -11,6 +13,8 @@ void opcaoPosOuNeg(void);
 void opcaoCombinacoes(void);
 void opcaoFibonacci(void);
 void opcaoBinarioADecimal(void);
+int pedirNumeroPositivo(char str[]);
+int pedirNumeroPositivoComZero(char str[]);
 
 int main(void)
 {
@@ -38,7 +42,7 @@ int main(void)
             opcaoFibonacci();
             break;
         case 6:
-            printf("A opção %d ainda não está implementada.\n", opcao);
+            opcaoBinarioADecimal();
             break;
         case 0:
             printf("A terminar o programa...\n");
@@ -180,13 +184,35 @@ void opcaoFibonacci(void) {
 }
 
 void opcaoBinarioADecimal(void) {
+  char bin[20];
+  int decimal;
+  int i;
+    
+  printf("Insira um número binário: ");
+  scanf("%s", bin);
+  decimal = 0;
 
+  int len = strlen(bin);
+  for(i = 0; i < len; i++) {
+    if (bin[i] != '0' && bin[i] != '1') {
+       printf("Error: Entrada inválida.\n");
+       return;
+    }
+
+    // '0' é representado por 48 e '1' por 49 (ASCII)
+    // '1' - '0' = 49 - 48 = 1
+    // '0' - '0' = 48 - 48 = 0
+    int digito = bin[i] - '0';
+
+    decimal += digito * pow(2, len - i - 1);
+  }
+  printf("O número decimal é: %d\n", decimal);
 }
 
 int pedirNumeroPositivo(char str[]) {
   int n;
   do {
-    printf(str);
+    printf("%s", str);
     scanf("%d", &n);
     if (n <= 0) {
       printf("%d é inválido\n", n);
@@ -198,7 +224,7 @@ int pedirNumeroPositivo(char str[]) {
 int pedirNumeroPositivoComZero(char str[]) {
   int n;
   do {
-    printf(str);
+    printf("%s", str);
     scanf("%d", &n);
     if (n < 0) {
       printf("%d é inválido\n", n);
