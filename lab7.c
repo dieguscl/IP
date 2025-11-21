@@ -10,6 +10,7 @@ void preencherManual(int v[], int n);
 void preencherAleatorio(int v[], int n);
 void mostrarVetor(int v[], int n);
 int apresentarMenu(void);
+void determinarMinMax(int v[]);
 
 int main()
 {
@@ -49,7 +50,7 @@ int main()
                 mostrarVetor(tabela, nElem);
                 break;
             case 4:
-                // determinarMinMax();
+                determinarMinMax(tabela);
                 break;
             case 5:
                 // calcularMedia();
@@ -108,6 +109,17 @@ void mostrarVetor(int v[], int n) {
     int i;
     for(i = 0; i < n; i++) {
         printf("%d - valor = %d\n", i+1, v[i]);
+    }
+}
+
+void determinarMinMax(int v[], int n) {
+    int max = 0, min = 0;
+    for(i = 0; i < n; i++) {
+       if (v[i] > max) {
+          max = v[i]
+      } else if (v[i] < min) {
+        min = v[i]
+    } 
     }
 }
 
