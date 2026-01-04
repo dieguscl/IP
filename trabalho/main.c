@@ -1,3 +1,8 @@
+/**
+ * @file main.c
+ * @brief Ponto de entrada da aplicação de Gestão de Negócio.
+ */
+
 #include <stdio.h>
 #include <locale.h>
 #include <string.h>
