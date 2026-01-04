@@ -15,8 +15,12 @@ void inserirCliente(Cliente *clientes, int *totalClientes);
 void alterarCliente(Cliente *clientes, int *totalClientes);
 void removerCliente(Cliente *clientes, int *totalClientes);
 void listarClientes(Cliente *clientes, int *totalClientes);
+void procurarCliente(Cliente *clientes, int totalClientes);
+void ordenarClientes(Cliente *clientes, int totalClientes);
 int apresentarMenuClientes(void);
 void gerirClientes(Cliente *clientes, int *totalClientes);
+void guardarClientes(Cliente *clientes, int totalClientes);
+void carregarClientes(Cliente *clientes, int *totalClientes);
 
 
 #endif
