@@ -25,7 +25,6 @@ void mostrarEstatisticas(Cliente *clientes, int totalClientes, Funcionario *func
     printf("Total de Encargos com Salários: %.2f€\n", totalSalarios);
 
     printf("\n--- Top 3 Produtos em Stock ---\n");
-    // Sort produtos by stock (descending) - only for display
     Produto tempProdutos[MAX_PRODUTOS];
     for(int i=0; i<totalProdutos; i++) tempProdutos[i] = produtos[i];
     

@@ -1,8 +1,3 @@
-/**
- * @file clientes.c
- * @brief Implementação das funções de gestão de clientes.
- */
-
 #include "clientes.h"
 #include <stdio.h>
 #include <string.h>

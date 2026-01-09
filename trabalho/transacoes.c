@@ -1,17 +1,8 @@
-/**
- * @file transacoes.c
- * @brief Implementação das funções de registo de transações.
- */
-
 #include "transacoes.h"
 #include <stdio.h>
-#include <string.h>
 #include <time.h>
 #include "uteis.h"
 
-/**
- * @brief Menu principal para gestão de transações.
- */
 void gerirTransacoes(Transacao *transacoes, int *totalTransacoes, Cliente *clientes, int totalClientes, Produto *produtos, int totalProdutos) {
     int opcao;
 

@@ -15,8 +15,8 @@ void inserirProduto(Produto *produtos, int *totalProdutos);
 void alterarProduto(Produto *produtos, int *totalProdutos);
 void removerProduto(Produto *produtos, int *totalProdutos);
 void listarProdutos(Produto *produtos, int *totalProdutos);
-int apresentarMenuProdutos(void);
-void gerirProdutos(Produto *produtos, int *totalProdutos);
+int apresentarMenuProdutos(int tipoUtilizador);
+void gerirProdutos(Produto *produtos, int *totalProdutos, int tipoUtilizador);
 void guardarProdutos(Produto *produtos, int totalProdutos);
 void carregarProdutos(Produto *produtos, int *totalProdutos);
 

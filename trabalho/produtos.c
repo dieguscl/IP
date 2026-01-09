@@ -1,34 +1,36 @@
-/**
- * @file produtos.c
- * @brief Implementação das funções de gestão de produtos.
- */
-
 #include "produtos.h"
 #include <stdio.h>
 #include <string.h>
 #include "uteis.h"
 
-/**
- * @brief Menu principal para gestão de produtos.
- */
-void gerirProdutos(Produto *produtos, int *totalProdutos) {
+#define TIPO_GESTOR 1
+#define TIPO_FUNCIONARIO 2
+
+void gerirProdutos(Produto *produtos, int *totalProdutos, int tipoUtilizador) {
     int opcao;
 
     do {
-        opcao = apresentarMenuProdutos();
+        opcao = apresentarMenuProdutos(tipoUtilizador);
+
+        if (tipoUtilizador == TIPO_FUNCIONARIO && opcao != 4 && opcao != 0) {
+            printf("\nErro: Permissão negada. Funcionários apenas podem listar produtos.\n");
+            printf("Pressione ENTER para continuar...");
+            getchar(); getchar();
+            continue;
+        }
 
         switch (opcao) {
             case 1:
-                inserirProduto(produtos, totalProdutos);
+                listarProdutos(produtos, totalProdutos);
                 break;
             case 2:
-                alterarProduto(produtos, totalProdutos);
+                inserirProduto(produtos, totalProdutos);
                 break;
             case 3:
-                removerProduto(produtos, totalProdutos);
+                alterarProduto(produtos, totalProdutos);
                 break;
             case 4:
-                listarProdutos(produtos, totalProdutos);
+                removerProduto(produtos, totalProdutos);
                 break;
             case 0:
                 break;
@@ -38,15 +40,17 @@ void gerirProdutos(Produto *produtos, int *totalProdutos) {
     } while (opcao != 0);
 }
 
-int apresentarMenuProdutos(void) {
+int apresentarMenuProdutos(int tipoUtilizador) {
     limparEcra();
     int opcao;
 
     printf("\n--- GESTÃO DE PRODUTOS ---\n\n");
-    printf("1 - Inserir produto\n");
-    printf("2 - Alterar produto\n");
-    printf("3 - Remover produto\n");
-    printf("4 - Listar produtos\n");
+    printf("1 - Listar produtos\n");
+    if (tipoUtilizador == TIPO_GESTOR) {
+        printf("2 - Inserir produto\n");
+        printf("3 - Alterar produto\n");
+        printf("4 - Remover produto\n");
+    }
     printf("0 - Sair\n");
     printf("\nQual a sua opção: ");
     scanf("%d", &opcao);

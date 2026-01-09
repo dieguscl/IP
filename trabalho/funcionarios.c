@@ -1,16 +1,8 @@
-/**
- * @file funcionarios.c
- * @brief Implementação das funções de gestão de funcionários.
- */
-
 #include "funcionarios.h"
 #include <stdio.h>
 #include <string.h>
 #include "uteis.h"
 
-/**
- * @brief Menu principal para gestão de funcionários.
- */
 void gerirFuncionarios(Funcionario *funcionarios, int *totalFuncionarios) {
     int opcao;
 
@@ -66,7 +58,7 @@ void inserirFuncionario(Funcionario *funcionarios, int *totalFuncionarios) {
     Funcionario f;
     printf("\nInserir funcionário:\n");
     printf("Nome: ");
-    scanf(" %[^\n]", f.nome); // Read string with spaces
+    scanf(" %[^\n]", f.nome);
 
     printf("NIF: ");
     scanf("%d", &f.nif);
